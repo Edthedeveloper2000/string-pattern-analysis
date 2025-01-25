@@ -10,7 +10,7 @@ Frequency freq_table[] = {
     {'y', 0.01},  {'z', 0.47}
 };
 
-void encrypt_decrypt_text(char *text, int key, int encrypt) {
+void encrypt_decrypt_text(Text text, int key, int encrypt) {
     for (int i = 0; text[i] != '\0'; i++) {
         if (isalpha(text[i])) {
             char base = islower(text[i]) ? 'a' : 'A';

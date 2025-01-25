@@ -1,15 +1,27 @@
 #include "brute-force.h"
+#include <time.h>
+#include <stdio.h>
 
-void BruteForce(Text T, long *n, Pattern P, long *m) { 
+void BruteForce(Text T, Pattern P) {
+
+    clock_t start, end;
+    double cpu_time_used;
+
+    start = clock();
+
     long i, j, k;
-    for (i = 1; i <= (*n - *m + 1); i++) { 
+    for (i = 1; i <= (textSize - patternSize + 1); i++) { 
         k = i;
         j = 1;
-        while (T[k-1] == P[j-1] && j <= *m) { 
+        while (T[k-1] == P[j-1] && j <= patternSize) { 
             j++; 
             k++;
         }
-        if (j > *m)
-            printf(" Casamento na posicao%3ld\n", i);
+        // if (j > patternSize)
+        //     printf(" Casamento na posicao%3ld\n", i);
     }
+
+    end = clock();
+    cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+    printf("Tempo de execucao brute-force: %f segundos\n", cpu_time_used);
 }
