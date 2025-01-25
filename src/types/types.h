@@ -1,4 +1,6 @@
 #include "../common.h"
+#ifndef TYPES
+#define TYPES
 
 #define MaxTamText     4000
 #define MaxTamPattern    10
@@ -16,3 +18,4 @@ long k;
 long i;
 
 
+#endif
