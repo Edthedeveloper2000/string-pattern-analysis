@@ -2,7 +2,7 @@
 #ifndef SHIFT_AND
 
 
-void ShiftAnd(TipoTexto T, long *n, TipoPadrao P, long *m);
+void ShiftAnd(Text T, long *n, Pattern P, long *m);
 
 
 #endif

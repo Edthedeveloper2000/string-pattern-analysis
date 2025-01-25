@@ -1,6 +1,6 @@
 #include "brute-force.h"
 
-void ForcaBruta(TipoTexto T, long *n, TipoPadrao P, long *m)
+void BruteForce(Text T, long *n, Pattern P, long *m)
 { long i, j, k;
   for (i = 1; i <= (*n - *m + 1); i++) 
     { k = i;

@@ -1,10 +1,10 @@
 #include "shift-and.h"
 
-void ShiftAnd(TipoTexto T, long *n, TipoPadrao P, long *m) { 
-    long Masc[Maxchar];
+void ShiftAnd(Text T, long *n, Pattern P, long *m) { 
+    long Masc[MaxChar];
     long i;
     long R = 0;
-    for (i = 0; i < Maxchar; i++)
+    for (i = 0; i < MaxChar; i++)
         Masc[i] = 0;
     for (i = 1; i <= *m; i++) {
         Masc[P[i-1] + 127] |= 1 << (*m - i);

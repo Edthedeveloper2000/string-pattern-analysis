@@ -1,15 +1,15 @@
 #include "../common.h"
 
-#define MaxTamTexto     1000
-#define MaxTamPadrao    10
-#define Maxchar         256
-#define NumMaxErros     10
+#define MaxTamText     1000
+#define MaxTamPattern    10
+#define MaxChar         256
+#define MaxError     10
 
-typedef unsigned char TipoTexto[MaxTamTexto];
-typedef unsigned char TipoPadrao[MaxTamPadrao];
+typedef unsigned char Text[MaxTamText];
+typedef unsigned char Pattern[MaxTamPattern];
 
-TipoTexto T;
-TipoPadrao P;
+Text T;
+Pattern P;
 long n;
 long m;
 long k;
