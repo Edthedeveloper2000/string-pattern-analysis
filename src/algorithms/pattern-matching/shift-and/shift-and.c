@@ -1,6 +1,6 @@
 #include "shift-and.h"
 
-void ShiftAndExato(TipoTexto T, long *n, TipoPadrao P, long *m) { 
+void ShiftAnd(TipoTexto T, long *n, TipoPadrao P, long *m) { 
     long Masc[Maxchar];
     long i;
     long R = 0;

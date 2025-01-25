@@ -1,9 +1,8 @@
-#include "../types/types.h"
+#include "../../../types/types.h"
 #ifndef SHIFT_AND
 
 
-
-void ShiftAnd();
+void ShiftAnd(TipoTexto T, long *n, TipoPadrao P, long *m);
 
 
 #endif
