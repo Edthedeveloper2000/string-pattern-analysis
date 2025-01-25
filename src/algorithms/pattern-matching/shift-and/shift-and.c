@@ -1,6 +1,4 @@
 #include "shift-and.h"
-#include <time.h>
-#include <stdio.h>
 
 void ShiftAnd(Text text, Pattern pattern) { 
     clock_t start, end;
