@@ -17,34 +17,6 @@ void readPattern(Pattern P, long size, const char *message) {
 }
 
 int main(int argc, char **argv) {
-    Text T;
-    Pattern P;
-    long n, m;
-    char filename[256];  // Caminho do arquivo
-    // Solicitar o caminho do arquivo
-    printf("Digite o caminho do arquivo de texto: ");
-    scanf("%s", filename);
-    // Ler conteúdo do arquivo
-    readFile(filename, T);
-
-    n = strlen((char *) T);
-
-    // Ler tamanho do padrão
-    printf("Tamanho do padrão: ");
-    scanf("%ld%*[^\n]", &m);
-    getchar();
-
-    // Ler o padrão
-    readPattern(P, m, "Padrão: ");
-
-    // Executar os algoritmos
-    printf("\nResultados:\n");
-
-    printf("Força bruta: ");
-    BruteForce(T, &n, P, &m);
-
-    printf("Shift-And-Exato: ");
-    ShiftAnd(T, &n, P, &m);
-
+    mainMenu();
     return 0;
 }

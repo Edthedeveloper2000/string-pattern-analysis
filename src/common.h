@@ -15,4 +15,16 @@
 #define GREEN "\e[0;32m"     // Verde
 #define RESET "\033[0m"      // Resetar cor
 
+// O ifdef abaixo verifica o sistema operacional, para 
+// incluir a biblioteca corretamente
+#ifdef __unix__         
+    #include <unistd.h>
+
+#elif defined(_WIN32) || defined(WIN32) 
+
+   #define OS_Windows
+
+   #include <windows.h>
+
+#endif
 #endif
