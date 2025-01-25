@@ -1,6 +1,6 @@
 #include "../common.h"
 
-#define MaxTamText     1000
+#define MaxTamText     4000
 #define MaxTamPattern    10
 #define MaxChar         256
 #define MaxError     10

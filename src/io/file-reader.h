@@ -1,6 +1,8 @@
+#include "../common.h"
+#include "../types/types.h"
 #ifndef FILE_READER_H
 #define FILE_READER_H
 
-char* readFile(char* filename);
+void readFile(const char* filename, Text text);
 
 #endif
