@@ -1,11 +1,6 @@
 #include "menu.h"
 
 void mainMenu() {
-    int choice;
-    Text text;
-    Pattern pattern;
-    int patternWidth;
-    int textWidth;
     printf("|=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=|\n");
     printf("|              "BLUE"MENU"RESET"             |\n");
     printf("|=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=|\n");
@@ -31,7 +26,6 @@ void mainMenu() {
 
 void fileReaderMenu(Text text, Pattern pattern) {
     char path[100];
-    int choice;
     printf("|=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=|\n");
     printf("|            "BLUE"LEITURA DO ARQUIVO"RESET"           |\n");
     printf("|=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=|\n");
@@ -39,7 +33,12 @@ void fileReaderMenu(Text text, Pattern pattern) {
     printf("| >>> ");
     scanf("%s", path);
     readFile(path, text);
+    textSize = strlen((char *) text);
     menuClear();
+    choiceMenu();
+}
+
+void choiceMenu() {
     do {
         printf("|=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=|\n");
         printf("|       "BLUE"OPÇÕES APÓS CARREGAR ARQUIVO"RESET"         |\n");
@@ -57,6 +56,7 @@ void fileReaderMenu(Text text, Pattern pattern) {
                 printf("| Digite o padrão a ser encontrado:     |\n");
                 printf("| >>> ");
                 scanf("%s", pattern);
+                patternSize = strlen((char *) pattern);
                 findPattern(text, pattern);
                 break;
             case 2:
@@ -75,13 +75,17 @@ void fileReaderMenu(Text text, Pattern pattern) {
         }
         system("pause");
         menuClear();
-    } while (choice != 4);  // Continua até o usuário escolher voltar
+    } while (choice != 4); 
 }
 
 void findPattern(Text text, Pattern pattern) {
-    // Função para encontrar o padrão de texto
-    printf("Procurando o padrão: %s...\n", pattern);
-    // Implementar a lógica de busca do padrão no texto
+   printf("\nResultados:\n");
+
+    printf("Força bruta: ");
+    BruteForce(text, pattern);
+
+    printf("Shift-And-Exato: ");
+    ShiftAnd(text, pattern);
 }
 
 void encryptText(Text text) {

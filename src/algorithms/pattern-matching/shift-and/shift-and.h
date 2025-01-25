@@ -4,7 +4,6 @@
 #define SHIFT_AND_H
 
 
-void ShiftAnd(Text T, long *n, Pattern P, long *m);
-
+void ShiftAnd(Text T, Pattern P);
 
 #endif
