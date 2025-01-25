@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 
 // Definições de cores ANSI
 #define RED "\x1b[31m"       // Vermelho

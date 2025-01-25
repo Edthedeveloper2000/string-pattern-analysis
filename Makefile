@@ -3,8 +3,8 @@ CC = gcc
 CFLAGS = -Wall
 
 # Regra para compilar os arquivos
-All: src/main.c src/algorithms/pattern-matching/brute-force/brute-force.c src/algorithms/pattern-matching/shift-and/shift-and.c
-	$(CC) $(CFLAGS) src/main.c src/algorithms/pattern-matching/brute-force/brute-force.c src/algorithms/pattern-matching/shift-and/shift-and.c -o exec
+All: src/main.c src/algorithms/pattern-matching/brute-force/brute-force.c src/algorithms/pattern-matching/shift-and/shift-and.c src/algorithms/caesar-cipher/cipher.c
+	$(CC) $(CFLAGS) src/main.c src/algorithms/pattern-matching/brute-force/brute-force.c src/algorithms/pattern-matching/shift-and/shift-and.c src/algorithms/caesar-cipher/cipher.c -o exec
 
 # Regra para executar o código após compilar
 Run: All
