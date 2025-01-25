@@ -10,16 +10,28 @@ Frequency freq_table[] = {
     {'y', 0.01},  {'z', 0.47}
 };
 
-void encrypt_decrypt_text(Text text, int key, int encrypt) {
+void encrypt_decrypt_text(Text text, int key, int encrypt, const char* output_filename) {
+    FILE* output_file = fopen(output_filename, "w");
+    if (!output_file) {
+        perror("Erro ao abrir o arquivo de saída");
+        return;
+    }
+
+    printf("Texto processado:\n");
     for (int i = 0; text[i] != '\0'; i++) {
         if (isalpha(text[i])) {
             char base = islower(text[i]) ? 'a' : 'A';
             text[i] = base + (encrypt ? (text[i] - base + key) : (text[i] - base - key + ALPHABET_SIZE)) % ALPHABET_SIZE;
         }
+        putchar(text[i]); 
+        fputc(text[i], output_file); 
     }
+    
+    putchar('\n'); 
+    fclose(output_file); 
 }
 
-void calculate_frequencies(const char *text, float frequencies[]) {
+void calculate_frequencies(Text text, float frequencies[]) {
     memset(frequencies, 0, ALPHABET_SIZE * sizeof(float));
     int total = 0;
 

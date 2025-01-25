@@ -2,7 +2,7 @@
 #ifndef TYPES
 #define TYPES
 
-#define MaxTamText     1000000000
+#define MaxTamText     1000000
 #define MaxTamPattern    10
 #define MaxChar         256
 #define MaxError         10
