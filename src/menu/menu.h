@@ -11,11 +11,17 @@ void mainMenu();
 
 void fileReaderMenu();
 
-void findPattern(Text text, Pattern pattern);
-void encryptText(Text text);
-void decryptText(Text text);
-void menuClear();
 void choiceMenu();
+
+void findPattern(Text text, Pattern pattern);
+
+void encryptText(Text text);
+
+void decryptText(Text text);
+
+void encryptGuessKey(Text text);
+
 void menuClear();
+
 #endif
 
