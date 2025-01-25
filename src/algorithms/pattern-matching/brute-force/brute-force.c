@@ -1,6 +1,4 @@
 #include "brute-force.h"
-#include <time.h>
-#include <stdio.h>
 
 void BruteForce(Text T, Pattern P) {
 
