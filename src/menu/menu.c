@@ -83,7 +83,7 @@ void choiceMenu() {
                 printf("Opção inválida! Tente novamente.\n");
                 break;
         }
-        system("pause");
+        pauseConsole();
         menuClear();
     } while (choice != 5); 
 }
@@ -153,4 +153,10 @@ void menuClear() {
     #else
         system("clear");
     #endif 
+}
+
+void pauseConsole() {
+    printf("Aperta Enter para continuar...");
+    getchar();
+    getchar();
 }

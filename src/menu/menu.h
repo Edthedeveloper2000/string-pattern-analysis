@@ -23,5 +23,7 @@ void encryptGuessKey(Text text);
 
 void menuClear();
 
+void pauseConsole();
+
 #endif
 
