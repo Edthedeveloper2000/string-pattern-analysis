@@ -27,5 +27,6 @@ void ShiftAnd(Text text, Pattern pattern) {
 
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
-    printf("Tempo de execucao shift-and: %f segundos\n", cpu_time_used);
+    cpu_time_used /= (textSize - patternSize + 1);
+    printf("Tempo de execucao shift-and: %.10lf segundos\n", cpu_time_used);
 }
