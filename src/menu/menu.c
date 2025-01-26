@@ -62,8 +62,10 @@ void choiceMenu() {
             case 1:
                 printf("| Digite o padrão a ser encontrado:\n");
                 printf("| >>> ");
-                scanf("%s", pattern);
+                getchar();
+                scanf("%[^\n]", pattern);
                 patternSize = strlen((char *) pattern);
+                printf("%ld", patternSize);
                 findPattern(text, pattern);
                 break;
             case 2:
@@ -156,7 +158,12 @@ void menuClear() {
 }
 
 void pauseConsole() {
-    printf("Aperta Enter para continuar...");
-    getchar();
-    getchar();
+    #ifdef OS_Windows
+        getchar();
+        system("pause");
+    #else
+        printf("Aperta Enter para continuar...");
+        getchar();
+        getchar();
+    #endif
 }

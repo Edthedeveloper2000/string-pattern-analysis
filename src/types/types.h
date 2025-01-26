@@ -3,7 +3,7 @@
 #define TYPES
 
 #define MaxTamText     1000000
-#define MaxTamPattern    10
+#define MaxTamPattern    100
 #define MaxChar         256
 #define MaxError         10
 
