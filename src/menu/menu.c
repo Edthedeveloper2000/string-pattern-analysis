@@ -1,5 +1,11 @@
 #include "menu.h"
 
+int choice;
+Text text;
+Pattern pattern;
+long patternSize;
+long textSize;
+
 void mainMenu() {
     printf("|=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=|\n");
     printf("|              "BLUE"MENU"RESET"             |\n");

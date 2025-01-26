@@ -10,11 +10,10 @@
 typedef unsigned char Text[MaxTamText];
 typedef unsigned char Pattern[MaxTamPattern];
 
-int choice;
-Text text;
-Pattern pattern;
-long patternSize;
-long textSize;
+extern Text text;
+extern Pattern pattern;
+extern long patternSize;
+extern long textSize;
 
 
 #endif
