@@ -83,7 +83,7 @@ void choiceMenu() {
                 mainMenu(); 
                 break;
             default:
-                printf("Opção inválida! Tente novamente.\n");
+                printf("| "RED"Opção inválida!"RESET" Tente novamente.\n");
                 break;
         }
         pauseConsole();
@@ -106,43 +106,45 @@ void findPattern(Text text, Pattern pattern) {
 void encryptText(Text text) {
     int key;
     char out_file[100];
-    printf("Digite a chave para criptografar: ");
+    printf("| Digite a chave para criptografar: ");
     scanf("%d", &key);
-    printf("Digite o caminho do arquivo de saida: ");
+    printf("| Digite o caminho do arquivo de saida: ");
     scanf("%s", out_file);
     encrypt_decrypt_text(text, key, ENCRYPT, out_file);
     printf("\n");
-    printf("Texto criptografado com sucesso!\n");
+    printf(">>> Texto criptografado com sucesso!\n");
 }
 
 void decryptText(Text text) {
     int key;
     char out_file[100];
-    printf("Digite a chave para descriptografar: ");
+    printf("| Digite a chave para descriptografar: ");
     scanf("%d", &key);
-    printf("Digite o caminho do arquivo de saida: ");
+    printf("| Digite o caminho do arquivo de saida: ");
     scanf("%s", out_file);
     encrypt_decrypt_text(text, key, DECRYPT, out_file);
     printf("\n");
-    printf("Texto descriptografado com sucesso!\n");
+    printf(">>> Texto descriptografado com sucesso!\n");
 }
 
 void encryptGuessKey(Text text){
-    int key = 1 + rand() % 50;
+    srand(time(NULL));
+    int key = 1 + rand() % 26;
     char out_file[100];
     float frequencies[26];
-    printf("Digite o caminho do arquivo de saida: ");
+    printf("| Digite o caminho do arquivo de saida: ");
     scanf("%s", out_file);
     printf("\n");
     encrypt_decrypt_text(text, key, ENCRYPT, out_file);
     calculate_frequencies(text, frequencies);
     printf("\n");
-    printf("Tabela de frequências:\n ");
+    printf("| Tabela de frequências:\n");
     for(int i = 0; i < 26; i++){
         char letter = 'a' + i; 
-        printf("%c: %.2f%%\n", letter, frequencies[i]);
+        printf("| %c: %.2f%%\n", letter, frequencies[i]);
     }
-    printf("Chave advinhada: %d\n", guess_key(frequencies));
+    printf("| Chave advinhada: %d\n", guess_key(frequencies));
+    printf("| Chave real utilizada: %d\n", key);
 }
 
 
