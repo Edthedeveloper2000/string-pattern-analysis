@@ -2,10 +2,10 @@
 #ifndef TYPES
 #define TYPES
 
-#define MaxTamText     1000000
-#define MaxTamPattern    100
-#define MaxChar         256
-#define MaxError         10
+#define MaxTamText       10000000
+#define MaxTamPattern         150
+#define MaxChar               256
+#define MaxError               10
 
 typedef unsigned char Text[MaxTamText];
 typedef unsigned char Pattern[MaxTamPattern];

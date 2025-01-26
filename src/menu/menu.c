@@ -65,7 +65,8 @@ void choiceMenu() {
                 getchar();
                 scanf("%[^\n]", pattern);
                 patternSize = strlen((char *) pattern);
-                printf("%ld", patternSize);
+                printf("%ld\n", patternSize);
+                printf("%ld\n", textSize);
                 findPattern(text, pattern);
                 break;
             case 2:
@@ -87,7 +88,9 @@ void choiceMenu() {
         }
         pauseConsole();
         menuClear();
-    } while (choice != 5); 
+    } while (choice == 1); 
+    menuClear();
+    mainMenu(); 
 }
 
 void findPattern(Text text, Pattern pattern) {
@@ -103,13 +106,11 @@ void findPattern(Text text, Pattern pattern) {
 void encryptText(Text text) {
     int key;
     char out_file[100];
-    Text cpy_text;
-    strcpy((char *) cpy_text, (char *) text);
     printf("Digite a chave para criptografar: ");
     scanf("%d", &key);
     printf("Digite o caminho do arquivo de saida: ");
     scanf("%s", out_file);
-    encrypt_decrypt_text(cpy_text, key, ENCRYPT, out_file);
+    encrypt_decrypt_text(text, key, ENCRYPT, out_file);
     printf("\n");
     printf("Texto criptografado com sucesso!\n");
 }
@@ -117,13 +118,11 @@ void encryptText(Text text) {
 void decryptText(Text text) {
     int key;
     char out_file[100];
-    Text cpy_text;
-    strcpy((char *) cpy_text, (char *) text);
     printf("Digite a chave para descriptografar: ");
     scanf("%d", &key);
     printf("Digite o caminho do arquivo de saida: ");
     scanf("%s", out_file);
-    encrypt_decrypt_text(cpy_text, key, DECRYPT, out_file);
+    encrypt_decrypt_text(text, key, DECRYPT, out_file);
     printf("\n");
     printf("Texto descriptografado com sucesso!\n");
 }
@@ -131,14 +130,12 @@ void decryptText(Text text) {
 void encryptGuessKey(Text text){
     int key = 1 + rand() % 50;
     char out_file[100];
-    Text cpy_text;
-    strcpy((char *) cpy_text, (char *) text);
     float frequencies[26];
     printf("Digite o caminho do arquivo de saida: ");
     scanf("%s", out_file);
     printf("\n");
-    encrypt_decrypt_text(cpy_text, key, ENCRYPT, out_file);
-    calculate_frequencies(cpy_text, frequencies);
+    encrypt_decrypt_text(text, key, ENCRYPT, out_file);
+    calculate_frequencies(text, frequencies);
     printf("\n");
     printf("Tabela de frequências:\n ");
     for(int i = 0; i < 26; i++){
